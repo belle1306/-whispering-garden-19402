@@ -9,6 +9,8 @@
 <script>
 import ItemList from "@/components/ItemList";
 import AddItem from "@/components/AddItem";
+// import leaflet from "leaflet";
+
 
 export default {
   name: "home",
@@ -50,6 +52,7 @@ export default {
         },
       })
         .then((res) => {
+          console.log(res);
           this.itemList = this.itemList.filter(
             (item) => item.itemid !== itemid
           );
@@ -92,6 +95,11 @@ export default {
     this.getItemList();
   },
 };
+
+// var map = L.map('map', {
+//     center: [51.505, -0.09],
+//     zoom: 13
+// });
 </script>
 
 <style>
