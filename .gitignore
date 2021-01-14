@@ -3,6 +3,5 @@
 # dependencies
 /node_modules
 /dist
-.env
 package.json
 yarn.lock
