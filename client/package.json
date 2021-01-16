@@ -8,6 +8,8 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@mrjeffapp/vue-braintree-paypal-button": "^1.1.1",
+    "braintree": "^3.1.0",
     "core-js": "^3.6.5",
     "leaflet": "^1.7.1",
     "vue": "^2.6.11",

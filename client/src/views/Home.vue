@@ -2,6 +2,7 @@
   <div id="app">
     <ItemList v-bind:itemList="itemList" v-on:del-item="deleteItem" />
     <AddItem v-on:add-item="addItem" />
+    
     <router-view />
   </div>
 </template>
@@ -9,6 +10,7 @@
 <script>
 import ItemList from "@/components/ItemList";
 import AddItem from "@/components/AddItem";
+
 // import leaflet from "leaflet";
 
 
@@ -16,7 +18,8 @@ export default {
   name: "home",
   components: {
     ItemList,
-    AddItem,
+    AddItem
+    
   },
 
   data() {
