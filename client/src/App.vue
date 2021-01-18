@@ -1,15 +1,19 @@
 <template>
   <div id="app">
     <Header />
+    <paypalCheckout/>
     <router-view />
   </div>
 </template>
 
 <script>
 import Header from "./components/Layout/Header";
+import paypalCheckout from "@/components/paypalCheckout";
+
 export default {
   name: "app",
   components: { Header },
+  paypalCheckout
 };
 </script>
 <style>

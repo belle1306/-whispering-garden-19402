@@ -2,7 +2,7 @@
   <div id="app">
     <ItemList v-bind:itemList="itemList" v-on:del-item="deleteItem" />
     <AddItem v-on:add-item="addItem" />
-    
+    <paypalCheckout/>
     <router-view />
   </div>
 </template>
@@ -10,6 +10,7 @@
 <script>
 import ItemList from "@/components/ItemList";
 import AddItem from "@/components/AddItem";
+import paypalCheckout from "@/components/paypalCheckout";
 
 // import leaflet from "leaflet";
 
@@ -18,14 +19,16 @@ export default {
   name: "home",
   components: {
     ItemList,
-    AddItem
+    AddItem,
+    paypalCheckout
     
   },
 
   data() {
     return {
       itemList: [],
-    };
+      
+  }
   },
 
   methods: {
@@ -99,10 +102,9 @@ export default {
   },
 };
 
-// var map = L.map('map', {
-//     center: [51.505, -0.09],
-//     zoom: 13
-// });
+
+  
+
 </script>
 
 <style>
