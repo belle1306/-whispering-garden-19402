@@ -24,21 +24,6 @@
 
 // app.use('/api', apiRouter);
 
-const http = require('http');
-const port = process.env.PORT || 3000
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/html');
-  res.end('<h1>Hello World</h1>');
-});
-
-server.listen(port,() => {
-  console.log(`Server running at port `+port);
-});
-
-
-
 
 
 // // catch 404 and forward to error handler
@@ -57,5 +42,28 @@ server.listen(port,() => {
 //   res.status(err.status || 500);
 //   res.send('error');
 // });
+
+// module.exports = app;
+
+var express = require('express');
+var app = express();
+var path = require('path');
+
+app.use(express.static(path.join(__dirname)));
+app.use("/styles", express.static(__dirname));
+app.use("/images", express.static(__dirname + '/images'));
+app.use("/scripts", express.static(__dirname + '/scripts'));
+
+// viewed at based directory http://localhost:8080/
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname + 'views/index.html'));
+});
+
+// add other routes below
+app.get('/about', function (req, res) {
+  res.sendFile(path.join(__dirname + 'views/about.html'));
+});
+
+app.listen(process.env.PORT || 8080);
 
 module.exports = app;
