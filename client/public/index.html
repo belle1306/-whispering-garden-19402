@@ -46,12 +46,17 @@
 	        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			maxZoom: 15				
 		}).addTo(map);
-  var circle = L.circle([5.228, 100.18], {
+  var circle = L.circle([5.3559, 100.3025], {
     color: 'red',
     fillColor: '#f03',
     fillOpacity: 0.5,
-    radius: 500
+    radius: 1000
 }).addTo(map);
+
+var popup = L.popup()
+    .setLatLng([5.3559, 100.3025])
+    .setContent("I am here")
+    .openOn(mymap);
 </script>
   </body>
 </html>
